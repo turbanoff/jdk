@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2001, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2001, 2021, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -155,9 +155,7 @@ public class BasicCDebugInfoDataBase implements CDebugInfoDataBase {
       Assert.that(state == RESOLVED_STATE, "wrong state");
     }
     // Move all types to type list
-    for (Iterator<Type> iter = lazyTypeMap.values().iterator(); iter.hasNext(); ) {
-      types.add(iter.next());
-    }
+    types.addAll(lazyTypeMap.values());
     // Build name-to-type map
     nameToTypeMap = new HashMap<>();
     for (Iterator iter = types.iterator(); iter.hasNext(); ) {
