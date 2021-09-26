@@ -2899,7 +2899,7 @@ public class RelationService extends NotificationBroadcasterSupport
     // -param roleList  role list to initialize roles of the relation
     //  (can be null)
     //
-    // -exception IllegalArgumentException  if null paramater
+    // -exception IllegalArgumentException  if null parameter
     // -exception RelationServiceNotRegisteredException  if the Relation
     //  Service is not registered in the MBean Server
     // -exception RoleNotFoundException  if a value is provided for a role
@@ -3007,9 +3007,7 @@ public class RelationService extends NotificationBroadcasterSupport
 
                 // Removes role info for that list from list of role infos for
                 // roles to be defaulted
-                int roleInfoIdx = roleInfoList.indexOf(roleInfo);
-                // Note: no need to check if != -1, MUST be there :)
-                roleInfoList.remove(roleInfoIdx);
+                roleInfoList.remove(roleInfo);
             }
         }
 
@@ -3022,7 +3020,7 @@ public class RelationService extends NotificationBroadcasterSupport
                                relationTypeName,
                                roleInfoList);
 
-        // Creation of relation successfull!!!!
+        // Creation of relation successful!!!!
 
         // Updates internal maps
         // Relation id to object map
@@ -3224,7 +3222,7 @@ public class RelationService extends NotificationBroadcasterSupport
     //  in the Relation Service)
     // -param roleInfoList  list of role infos for roles to be defaulted
     //
-    // -exception IllegalArgumentException  if null paramater
+    // -exception IllegalArgumentException  if null parameter
     // -exception RelationServiceNotRegisteredException  if the Relation
     //  Service is not registered in the MBean Server
     // -exception InvalidRoleValueException  if role must have a non-empty
@@ -3650,7 +3648,7 @@ public class RelationService extends NotificationBroadcasterSupport
             //         myRefedMBeanObjName2RelIdsMap!!!! Because each role
             //         which name is in that list will be updated (potentially
             //         using setRole(). So the Relation Service will update the
-            //         myRefedMBeanObjName2RelIdsMap to refelect the new role
+            //         myRefedMBeanObjName2RelIdsMap to reflect the new role
             //         value!
             for (String currRoleName : roleNameList) {
 

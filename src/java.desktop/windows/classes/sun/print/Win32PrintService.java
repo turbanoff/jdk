@@ -659,7 +659,7 @@ public class Win32PrintService implements PrintService, AttributeUpdater,
                 //Remove corresponding ID from list
                 if (nMedia == media.length) {
                     Integer remObj = Integer.valueOf(media[i]);
-                    idList.remove(idList.indexOf(remObj));
+                    idList.remove(remObj);
                 }
                 continue;
             }
@@ -685,7 +685,7 @@ public class Win32PrintService implements PrintService, AttributeUpdater,
                 } catch(IllegalArgumentException e) {
                     if (nMedia == media.length) {
                         Integer remObj = Integer.valueOf(media[i]);
-                        idList.remove(idList.indexOf(remObj));
+                        idList.remove(remObj);
                     }
                 }
             }
