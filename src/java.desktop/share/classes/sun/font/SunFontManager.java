@@ -1402,9 +1402,8 @@ public abstract class SunFontManager implements FontSupport, FontManagerForSGE {
                     ttf = new TrueTypeFont(fullPath, null, fn++, false);
                     //  prefer the font's locale name.
                     String fontName = ttf.getFontName(l).toLowerCase();
-                    if (unmappedFonts.contains(fontName)) {
+                    if (unmappedFonts.remove(fontName)) {
                         fontToFileMap.put(fontName, file);
-                        unmappedFonts.remove(fontName);
                         if (FontUtilities.isLogging()) {
                             FontUtilities.logInfo("Resolved absent registry entry for " +
                                             fontName + " located in " + fullPath);

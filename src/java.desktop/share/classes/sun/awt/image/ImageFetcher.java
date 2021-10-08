@@ -105,9 +105,7 @@ class ImageFetcher extends Thread {
     public static void remove(ImageFetchable src) {
         final FetcherInfo info = FetcherInfo.getFetcherInfo();
         synchronized(info.waitList) {
-            if (info.waitList.contains(src)) {
-                info.waitList.removeElement(src);
-            }
+            info.waitList.removeElement(src);
         }
     }
 

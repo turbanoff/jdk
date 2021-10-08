@@ -1892,9 +1892,7 @@ public final class XToolkit extends UNIXToolkit implements Runnable {
             Iterator<java.util.List<Runnable>> iter = values.iterator();
             while (iter.hasNext()) {
                 java.util.List<Runnable> list = iter.next();
-                boolean removed = false;
-                if (list.contains(task)) {
-                    list.remove(task);
+                if (list.remove(task)) {
                     if (list.isEmpty()) {
                         iter.remove();
                     }

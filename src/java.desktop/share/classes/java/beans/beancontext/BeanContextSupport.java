@@ -655,10 +655,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
         if (bcml == null) throw new NullPointerException("listener");
 
         synchronized(bcmListeners) {
-            if (!bcmListeners.contains(bcml))
-                return;
-            else
-                bcmListeners.remove(bcml);
+            bcmListeners.remove(bcml);
         }
     }
 

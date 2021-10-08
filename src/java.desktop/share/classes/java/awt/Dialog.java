@@ -1564,8 +1564,7 @@ public class Dialog extends Window {
      * window is not modal blocked, does nothing.
      */
     void unblockWindow(Window w) {
-        if (w.isModalBlocked() && blockedWindows.contains(w)) {
-            blockedWindows.remove(w);
+        if (w.isModalBlocked() && blockedWindows.remove(w)) {
             w.setModalBlocked(this, false, true);
         }
     }

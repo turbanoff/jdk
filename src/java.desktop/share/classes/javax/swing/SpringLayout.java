@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2001, 2014, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2001, 2021, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -404,8 +404,7 @@ public class SpringLayout implements LayoutManager2 {
             boolean valid = true;
             List<String> history = horizontal ? horizontalHistory :
                                                 verticalHistory;
-            if (history.contains(name)) {
-                history.remove(name);
+            if (history.remove(name)) {
                 valid = false;
             } else if (history.size() == 2 && value != null) {
                 history.remove(0);

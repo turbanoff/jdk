@@ -1519,15 +1519,13 @@ public final class NumericShaper implements java.io.Serializable {
 
         // Give precedence to EASTERN_ARABIC if both ARABIC and
         // EASTERN_ARABIC are specified.
-        if (rangeSet.contains(Range.EASTERN_ARABIC)
-            && rangeSet.contains(Range.ARABIC)) {
+        if (rangeSet.contains(Range.EASTERN_ARABIC)) {
             rangeSet.remove(Range.ARABIC);
         }
 
         // As well as the above case, give precedence to TAI_THAM_THAM if both
         // TAI_THAM_HORA and TAI_THAM_THAM are specified.
-        if (rangeSet.contains(Range.TAI_THAM_THAM)
-            && rangeSet.contains(Range.TAI_THAM_HORA)) {
+        if (rangeSet.contains(Range.TAI_THAM_THAM)) {
             rangeSet.remove(Range.TAI_THAM_HORA);
         }
 

@@ -666,10 +666,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
         if (bcsl == null) throw new NullPointerException("bcsl");
 
         synchronized(bcsListeners) {
-            if (!bcsListeners.contains(bcsl))
-                return;
-            else
-                bcsListeners.remove(bcsl);
+            bcsListeners.remove(bcsl);
         }
     }
 
