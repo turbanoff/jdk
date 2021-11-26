@@ -608,7 +608,6 @@ final class TextLine {
         }
 
         int currentTlc = 0;
-        int tlcStart = 0;
         int tlcLimit = 0;
 
         do {
@@ -617,7 +616,6 @@ final class TextLine {
                 break;
             }
             ++currentTlc;
-            tlcStart = tlcLimit;
         } while(currentTlc < fComponents.length);
 
         return fComponents[currentTlc].getCoreMetrics();
@@ -1313,7 +1311,6 @@ final class TextLine {
         TextLineComponent[] newComponents = new TextLineComponent[fComponents.length];
         System.arraycopy(fComponents, 0, newComponents, 0, fComponents.length);
 
-        float leftHang = 0;
         float adv = 0;
         float justifyDelta = 0;
         boolean rejustify = false;
@@ -1375,7 +1372,6 @@ final class TextLine {
 
             float[] deltas = justifier.justify(justifyDelta);
 
-            boolean canRejustify = rejustify == false;
             boolean wantRejustify = false;
             boolean[] flags = new boolean[1];
 
@@ -1386,8 +1382,6 @@ final class TextLine {
                 int compLength = comp.getNumCharacters();
                 int compLimit = compStart + compLength;
                 if (compLimit > justStart) {
-                    int rangeMin = Math.max(0, justStart - compStart);
-                    int rangeMax = Math.min(compLength, justLimit - compStart);
                     newComponents[i] = comp.applyJustificationDeltas(deltas, infoPositions[i] * 2, flags);
 
                     wantRejustify |= flags[0];

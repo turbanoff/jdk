@@ -93,8 +93,6 @@ public class ImagingLib {
         PrivilegedAction<Boolean> doMlibInitialization =
             new PrivilegedAction<Boolean>() {
                 public Boolean run() {
-                    String arch = System.getProperty("os.arch");
-
                     try {
                         System.loadLibrary("mlib_image");
                     } catch (UnsatisfiedLinkError e) {
@@ -246,7 +244,6 @@ public class ImagingLib {
           case AFFINE_OP:
             AffineTransformOp bOp = (AffineTransformOp) op;
             double[] matrix = new double[6];
-            AffineTransform xform = bOp.getTransform();
             bOp.getTransform().getMatrix(matrix);
 
             if (transformBI(src, dst, matrix,

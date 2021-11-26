@@ -283,8 +283,7 @@ public class JMenuItem extends AbstractButton implements Accessible,MenuElement 
     public void setArmed(boolean b) {
         ButtonModel model = getModel();
 
-        boolean oldValue = model.isArmed();
-        if(model.isArmed() != b) {
+        if (model.isArmed() != b) {
             model.setArmed(b);
         }
     }

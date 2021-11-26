@@ -2818,7 +2818,6 @@ public class ComponentColorModel extends ColorModel {
      * @see SampleModel
      */
     public WritableRaster createCompatibleWritableRaster (int w, int h) {
-        int dataSize = w*h*numComponents;
         WritableRaster raster = null;
 
         switch (transferType) {

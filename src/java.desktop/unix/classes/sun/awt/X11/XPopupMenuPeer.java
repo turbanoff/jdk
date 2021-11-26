@@ -331,7 +331,6 @@ public class XPopupMenuPeer extends XMenuWindow implements PopupMenuPeer {
         if (isEventDisabled(xev)) {
             return;
         }
-        final Component currentSource = getEventSource();
         handleKeyPress(xkey);
     }
 

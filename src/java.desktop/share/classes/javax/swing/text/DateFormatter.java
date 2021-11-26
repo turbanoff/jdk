@@ -141,8 +141,6 @@ public class DateFormatter extends InternationalFormatter {
             if (calendar != null) {
                 calendar.setTime((Date)value);
 
-                int fieldValue = calendar.get(field);
-
                 try {
                     calendar.add(field, direction);
                     value = calendar.getTime();

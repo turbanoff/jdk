@@ -1434,7 +1434,6 @@ public class UIManager implements Serializable
         Vector<LookAndFeel> auxLookAndFeels = new Vector<LookAndFeel>();
 
         StringTokenizer p = new StringTokenizer(auxLookAndFeelNames,",");
-        String factoryName;
 
         /* Try to load each LookAndFeel subclass in the list.
          */

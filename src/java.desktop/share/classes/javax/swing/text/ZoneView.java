@@ -293,7 +293,6 @@ public class ZoneView extends BoxView {
     void splitZone(int index, int offs0, int offs1) {
         // divide the old zone into a new set of bins
         Element elem = getElement();
-        Document doc = elem.getDocument();
         ArrayList<View> zones = new ArrayList<View>();
         int offs = offs0;
         do {
@@ -301,7 +300,6 @@ public class ZoneView extends BoxView {
             offs = Math.min(getDesiredZoneEnd(offs0), offs1);
             zones.add(createZone(offs0, offs));
         } while (offs < offs1);
-        View oldZone = getView(index);
         View[] newZones = zones.toArray(new View[0]);
         replace(index, 1, newZones);
     }

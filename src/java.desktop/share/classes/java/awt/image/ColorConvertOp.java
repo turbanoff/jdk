@@ -774,7 +774,6 @@ public class ColorConvertOp implements BufferedImageOp, RasterOp {
         int dstNumComp = dstCM.getNumColorComponents();
         boolean dstHasAlpha = dstCM.hasAlpha();
         boolean needSrcAlpha = srcCM.hasAlpha() && dstHasAlpha;
-        ColorSpace[] list;
         if ((CSList == null) && (profileList.length != 0)) {
             /* possible non-ICC src, some profiles, possible non-ICC dst */
             boolean nonICCSrc, nonICCDst;

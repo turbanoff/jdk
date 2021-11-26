@@ -141,7 +141,6 @@ public final class StandardMidiFileWriter extends MidiFileWriter {
         Track[] tracks = sequence.getTracks();
         int bytesBuilt = 0;
         int headerLength = 14;
-        int length = 0;
         int timeFormat;
         float divtype;
 
@@ -305,7 +304,6 @@ public final class StandardMidiFileWriter extends MidiFileWriter {
 
     private InputStream writeTrack( Track track, int type ) throws IOException, InvalidMidiDataException {
         int bytesWritten = 0;
-        int lastBytesWritten = 0;
         int size = track.size();
         PipedOutputStream thpos = new PipedOutputStream();
         DataOutputStream  thdos = new DataOutputStream(thpos);
@@ -330,7 +328,6 @@ public final class StandardMidiFileWriter extends MidiFileWriter {
 
             int status;
             int eventtype;
-            int metatype;
             int data1, data2;
             int length;
             byte[] data = null;

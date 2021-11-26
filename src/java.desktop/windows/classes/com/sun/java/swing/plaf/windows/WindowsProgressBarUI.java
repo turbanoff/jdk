@@ -254,7 +254,6 @@ public class WindowsProgressBarUI extends BasicProgressBarUI
         if (xp != null) {
             boolean vertical = (progressBar.getOrientation()
                                  == JProgressBar.VERTICAL);
-            Part part = vertical ? Part.PP_BARVERT : Part.PP_BAR;
             Insets ins = indeterminateInsets;
 
             int currentFrame = getAnimationIndex();
@@ -350,7 +349,6 @@ public class WindowsProgressBarUI extends BasicProgressBarUI
         // create a new graphics to keep drawing surface state
         Graphics2D gfx = (Graphics2D)g.create();
 
-        Part part = vertical ? Part.PP_BARVERT : Part.PP_BAR;
         Part chunk = vertical ? Part.PP_CHUNKVERT : Part.PP_CHUNK;
 
         // calculate the chunk offsets

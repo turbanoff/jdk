@@ -159,7 +159,6 @@ public final class DebugSettings {
      */
     private void loadFileProperties() {
         String          propPath;
-        Properties      fileProps;
 
         // check if the user specified a particular settings file
         propPath = System.getProperty(PREFIX + "." + PROP_FILE, "");

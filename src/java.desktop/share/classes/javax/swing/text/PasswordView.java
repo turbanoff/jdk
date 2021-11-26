@@ -163,7 +163,7 @@ public class PasswordView extends FieldView {
                 boolean useDrawUnselectedFPAPI = useFPAPI
                         && drawSelectedTextOverridden
                         && g instanceof Graphics2D;
-                return (useFPAPI)
+                return (useDrawUnselectedFPAPI)
                         ? super.drawSelectedText((Graphics2D) g, x, y, p0, p1)
                         : super.drawSelectedText(g, (int) x, (int) y, p0, p1);
             }
@@ -319,7 +319,6 @@ public class PasswordView extends FieldView {
                 if (f.echoCharIsSet()) {
                     char echoChar = f.getEchoChar();
                     FontMetrics m = f.getFontMetrics(f.getFont());
-                    Document doc = getDocument();
                     return m.charWidth(echoChar) * getDocument().getLength();
                 }
             }

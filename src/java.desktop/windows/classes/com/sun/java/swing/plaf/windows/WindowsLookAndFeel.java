@@ -1786,8 +1786,6 @@ public class WindowsLookAndFeel extends BasicLookAndFeel
         // For focus rectangle for cells and trees.
         LazyValue focusCellHighlightBorder = t -> WindowsBorders.getFocusCellHighlightBorder();
 
-        LazyValue etchedBorder = t -> BorderUIResource.getEtchedBorderUIResource();
-
         LazyValue internalFrameBorder = t -> WindowsBorders.getInternalFrameBorder();
 
         LazyValue loweredBevelBorder = t -> BorderUIResource.getLoweredBevelBorderUIResource();

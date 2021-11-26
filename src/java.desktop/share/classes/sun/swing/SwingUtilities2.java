@@ -276,8 +276,6 @@ public class SwingUtilities2 {
                                          char firstChar) {
         int charIndex = (int) firstChar;
         if (charIndex < MAX_CHAR_INDEX && charIndex >= MIN_CHAR_INDEX) {
-            byte[] lsbs = null;
-
             FontRenderContext frc = getFontRenderContext(c, fm);
             Font font = fm.getFont();
             synchronized (SwingUtilities2.class) {

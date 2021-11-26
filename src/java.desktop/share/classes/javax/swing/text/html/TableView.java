@@ -1193,7 +1193,6 @@ import javax.swing.text.*;
                 int adjust = (spanNeeded - span);
                 int rowAdjust = adjust / nrows;
                 int firstAdjust = rowAdjust + (adjust - (rowAdjust * nrows));
-                RowView rv = getRow(rowIndex);
                 adjustments[rowIndex] = Math.max(adjustments[rowIndex],
                                                  firstAdjust);
                 for (int i = 1; i < nrows; i++) {

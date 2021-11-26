@@ -1774,8 +1774,6 @@ public class Container extends Component {
      * @since 1.0
      */
     public void setFont(Font f) {
-        boolean shouldinvalidate = false;
-
         Font oldfont = getFont();
         super.setFont(f);
         Font newfont = getFont();

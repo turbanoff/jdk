@@ -420,7 +420,6 @@ public class FormView extends ComponentView implements ActionListener {
     public void actionPerformed(ActionEvent evt) {
         Element element = getElement();
         StringBuilder dataBuffer = new StringBuilder();
-        HTMLDocument doc = (HTMLDocument)getDocument();
         AttributeSet attr = element.getAttributes();
 
         String type = (String) attr.getAttribute(HTML.Attribute.TYPE);
@@ -574,7 +573,6 @@ public class FormView extends ComponentView implements ActionListener {
 
         StringBuilder dataBuffer = new StringBuilder();
         Element elem = getElement();
-        HTMLDocument hdoc = (HTMLDocument)elem.getDocument();
         getFormData(dataBuffer);
         if (dataBuffer.length() > 0) {
             dataBuffer.append('&');

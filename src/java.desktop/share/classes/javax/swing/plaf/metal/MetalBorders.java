@@ -171,7 +171,6 @@ public class MetalBorders {
             }
             else if (model.isEnabled()) {
                 boolean pressed = model.isPressed();
-                boolean armed = model.isArmed();
 
                 if ((c instanceof JButton) && ((JButton)c).isDefaultButton()) {
                     g.setColor(MetalLookAndFeel.getControlDarkShadow());

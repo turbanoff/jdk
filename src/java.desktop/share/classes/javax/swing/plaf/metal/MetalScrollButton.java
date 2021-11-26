@@ -99,7 +99,6 @@ public class MetalScrollButton extends BasicArrowButton
             int w = width;
             int h = height;
             int arrowHeight = (height+1) / 4;
-            int arrowWidth = (height+1) / 2;
 
             if ( isPressed )
             {

@@ -602,8 +602,6 @@ public abstract class TIFFDecompressor {
                 return false;
             }
         } else if(sm instanceof SinglePixelPackedSampleModel) {
-            SinglePixelPackedSampleModel sppsm =
-                (SinglePixelPackedSampleModel)sm;
             int numBands = sm.getNumBands();
             int numBits = 0;
             for(int i = 0; i < numBands; i++) {
@@ -800,7 +798,6 @@ public abstract class TIFFDecompressor {
                 byte[] blueLut = new byte[mapSize];
                 byte[] alphaLut = null;
 
-                int idx = 0;
                 for (int i = 0; i < mapSize; i++) {
                     redLut[i] = (byte)((colorMap[i]*255)/65535);
                     greenLut[i] = (byte)((colorMap[mapSize + i]*255)/65535);

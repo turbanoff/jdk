@@ -318,8 +318,6 @@ public class AquaLookAndFeel extends BasicLookAndFeel {
         final ColorUIResource smokyGlass = new ColorUIResource(new Color(0, 0, 0, 152));
         final ColorUIResource dockIconRim = new ColorUIResource(new Color(192, 192, 192, 192));
         final ColorUIResource mediumTranslucentBlack = new ColorUIResource(new Color(0, 0, 0, 100));
-        final ColorUIResource translucentWhite = new ColorUIResource(new Color(255, 255, 255, 254));
-    //    final ColorUIResource lightGray = new ColorUIResource(232, 232, 232);
         final ColorUIResource disabled = new ColorUIResource(0.5f, 0.5f, 0.5f);
         final ColorUIResource disabledShadow = new ColorUIResource(0.25f, 0.25f, 0.25f);
         final ColorUIResource selected = new ColorUIResource(1.0f, 0.4f, 0.4f);

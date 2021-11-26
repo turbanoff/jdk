@@ -307,7 +307,6 @@ public class RenderableImageOp implements RenderableImage {
      * @return a RenderedImage containing the desired output image.
      */
     public RenderedImage createRendering(RenderContext renderContext) {
-        RenderedImage image = null;
         RenderContext rcOut = null;
 
         // Clone the original ParameterBlock; if the ParameterBlock

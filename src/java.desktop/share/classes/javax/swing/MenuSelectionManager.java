@@ -223,7 +223,7 @@ public class MenuSelectionManager {
     public void processMouseEvent(MouseEvent event) {
         int screenX,screenY;
         Point p;
-        int i,c,j,d;
+        int i,j,d;
         Component mc;
         Rectangle r2;
         int cWidth,cHeight;
@@ -396,7 +396,7 @@ public class MenuSelectionManager {
     public Component componentForPoint(Component source, Point sourcePoint) {
         int screenX,screenY;
         Point p = sourcePoint;
-        int i,c,j,d;
+        int i,j,d;
         Component mc;
         Rectangle r2;
         int cWidth,cHeight;

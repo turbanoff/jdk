@@ -96,7 +96,6 @@ public class SynthProgressBarUI extends BasicProgressBarUI
 
     private void updateStyle(JProgressBar c) {
         SynthContext context = getContext(c, ENABLED);
-        SynthStyle oldStyle = style;
         style = SynthLookAndFeel.updateStyle(context, this);
         setCellLength(style.getInt(context, "ProgressBar.cellLength", 1));
         setCellSpacing(style.getInt(context, "ProgressBar.cellSpacing", 0));

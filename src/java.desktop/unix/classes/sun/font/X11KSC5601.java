@@ -70,7 +70,6 @@ public class X11KSC5601 extends Charset {
             int sl = src.arrayOffset() + src.limit();
             byte[] da = dst.array();
             int dp = dst.arrayOffset() + dst.position();
-            int dl = dst.arrayOffset() + dst.limit();
 
             try {
                 while (sp < sl) {

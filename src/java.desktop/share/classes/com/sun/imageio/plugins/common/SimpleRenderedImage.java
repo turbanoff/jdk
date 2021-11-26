@@ -474,7 +474,6 @@ public abstract class SimpleRenderedImage implements RenderedImage {
 
                     // Create a child of the tile for the intersection of
                     // the tile bounds and the bounds of the requested area.
-                    Rectangle tileRect = tile.getBounds();
                     Rectangle intersectRect =
                         bounds.intersection(tile.getBounds());
                     Raster liveRaster = tile.createChild(intersectRect.x,
@@ -544,7 +543,6 @@ public abstract class SimpleRenderedImage implements RenderedImage {
 
                 // Create a child of the tile for the intersection of
                 // the tile bounds and the bounds of the requested area.
-                Rectangle tileRect = tile.getBounds();
                 Rectangle intersectRect =
                     bounds.intersection(tile.getBounds());
                 Raster liveRaster = tile.createChild(intersectRect.x,

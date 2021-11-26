@@ -286,7 +286,6 @@ public final class AiffFileWriter extends SunFileWriter {
             aiffLength = (int)dataSize+headerSize;
         }
         float sampleFramesPerSecond = format.getSampleRate();
-        int compCode = AiffFileFormat.AIFC_PCM;
 
         byte[] header = null;
         InputStream codedAudioStream = audioStream;

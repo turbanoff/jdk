@@ -92,23 +92,14 @@ class XAWTLookAndFeel extends MotifLookAndFeel {
                                                              Font.PLAIN, 12);
         FontUIResource monospacedPlain12 = new FontUIResource(Font.MONOSPACED,
                                                               Font.PLAIN, 12);
-        ColorUIResource red = new ColorUIResource(Color.red);
         ColorUIResource black = new ColorUIResource(Color.black);
-        ColorUIResource white = new ColorUIResource(Color.white);
-        ColorUIResource lightGray = new ColorUIResource(Color.lightGray);
-        ColorUIResource controlDarker =  new ColorUIResource(SystemColor.controlDkShadow);
 
-        Color back = table.getColor("control");
         Color[] colors  = XComponentPeer.getSystemColors();
         Color scrollBarBackground = colors[XComponentPeer.BACKGROUND_COLOR];
         Color trackColor = new Color(MotifColorUtilities.calculateSelectFromBackground(scrollBarBackground.getRed(), scrollBarBackground.getGreen(), scrollBarBackground.getBlue()));
         Border loweredBevelBorder = new MotifBorders.BevelBorder(false,
                                                                  table.getColor("controlShadow"),
                                                                  table.getColor("controlLtHighlight"));
-
-        Border raisedBevelBorder = new MotifBorders.BevelBorder(true,
-                                                                table.getColor("controlShadow"),
-                                                                table.getColor("controlLtHighlight"));
 
         Border marginBorder = new BasicBorders.MarginBorder();
 
@@ -256,8 +247,6 @@ class XAWTLookAndFeel extends MotifLookAndFeel {
             "control SPACE", "activate-link-action",
             "control shift O", "toggle-componentOrientation"
         });
-
-        Object sliderFocusInsets = new InsetsUIResource( 0, 0, 0, 0 );
 
         Object[] defaults = {
 

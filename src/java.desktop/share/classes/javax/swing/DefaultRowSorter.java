@@ -1137,8 +1137,6 @@ public abstract class DefaultRowSorter<M, I> extends RowSorter<M> {
         int i, j;
         int delta = lastRow - firstRow + 1;
         int modelIndex;
-        int last;
-        int index;
 
         if (getRowFilter() == null) {
             // Sorting only:

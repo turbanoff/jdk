@@ -451,8 +451,7 @@ public class Type1Font extends FileFont {
     }
 
     private String fullName2FamilyName(String name) {
-        String res, token;
-        int len, start, end; //length of family name part
+        int start, end; //length of family name part
 
         //FamilyName is truncated version of FullName
         //Truncated tail must contain only style modifiers
@@ -515,8 +514,9 @@ public class Type1Font extends FileFont {
         //Conversion: Truncate style portion (everything after '-')
         //            and insert missing spaces
 
-        if (tmp.indexOf('-') > 0) {
-            tmp = tmp.substring(0, tmp.indexOf('-'));
+        int pos = tmp.indexOf('-');
+        if (pos > 0) {
+            tmp = tmp.substring(0, pos);
         }
 
         return expandName(tmp, false);

@@ -739,9 +739,6 @@ public class JPEGImageWriter extends ImageWriter {
                 if (fullImage) {  // no dest, metadata, image
                     // Check that the metadata and the image match
 
-                    ImageTypeSpecifier inputType =
-                        new ImageTypeSpecifier(rimage);
-
                     inCsType = getSrcCSType(rimage);
 
                     if (cm != null) {

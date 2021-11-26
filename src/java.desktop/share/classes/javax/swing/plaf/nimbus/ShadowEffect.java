@@ -52,7 +52,6 @@ abstract class ShadowEffect extends Effect {
     }
 
     void setColor(Color color) {
-        Color old = getColor();
         this.color = color;
     }
 
@@ -61,7 +60,6 @@ abstract class ShadowEffect extends Effect {
     }
 
     void setOpacity(float opacity) {
-        float old = getOpacity();
         this.opacity = opacity;
     }
 
@@ -70,7 +68,6 @@ abstract class ShadowEffect extends Effect {
     }
 
     void setAngle(int angle) {
-        int old = getAngle();
         this.angle = angle;
     }
 
@@ -79,7 +76,6 @@ abstract class ShadowEffect extends Effect {
     }
 
     void setDistance(int distance) {
-        int old = getDistance();
         this.distance = distance;
     }
 
@@ -88,7 +84,6 @@ abstract class ShadowEffect extends Effect {
     }
 
     void setSpread(int spread) {
-        int old = getSpread();
         this.spread = spread;
     }
 
@@ -97,7 +92,6 @@ abstract class ShadowEffect extends Effect {
     }
 
     void setSize(int size) {
-        int old = getSize();
         this.size = size;
     }
 }

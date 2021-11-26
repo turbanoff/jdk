@@ -238,7 +238,6 @@ public class MotifSplitPaneDivider extends BasicSplitPaneDivider
             thumbHeight = hThumbHeight;
         }
         else {
-            int center = size.height/2;
             thumbX = size.width - vThumbOffset;
             thumbY = size.height/2 - vThumbHeight/2;
             thumbWidth = vThumbWidth;

@@ -250,7 +250,6 @@ public class MotifDesktopPaneUI extends javax.swing.plaf.basic.BasicDesktopPaneU
         protected JInternalFrame.JDesktopIcon getIconAt(JDesktopPane desktop,
             JInternalFrame.JDesktopIcon icon, int x, int y) {
 
-            JInternalFrame.JDesktopIcon currentIcon = null;
             Component[] components = desktop.getComponents();
 
             for (int i=0; i<components.length; i++) {

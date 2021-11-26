@@ -589,7 +589,6 @@ public class BasicBorders {
                 return;
             }
             Component          child;
-            Rectangle          cBounds;
             JSplitPane         splitPane = ((BasicSplitPaneDivider)c).
                                          getBasicSplitPaneUI().getSplitPane();
             Dimension          size = c.getSize();

@@ -39,7 +39,6 @@ class RTFAttributes
         ArrayList<RTFAttribute> a = new ArrayList<RTFAttribute>();
         int CHR = RTFAttribute.D_CHARACTER;
         int PGF = RTFAttribute.D_PARAGRAPH;
-        int SEC = RTFAttribute.D_SECTION;
         int DOC = RTFAttribute.D_DOCUMENT;
         int PST = RTFAttribute.D_META;
         Boolean True = Boolean.valueOf(true);

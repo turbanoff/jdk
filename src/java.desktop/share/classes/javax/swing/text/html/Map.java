@@ -459,8 +459,6 @@ class Map implements Serializable {
         public boolean contains(int x, int y, int width, int height) {
             if (percentValues != null && (lastWidth != width ||
                                           lastHeight != height)) {
-                int      newRad = Math.min(width, height) / 2;
-
                 lastWidth = width;
                 lastHeight = height;
                 if (percentValues[0] != -1.0f) {

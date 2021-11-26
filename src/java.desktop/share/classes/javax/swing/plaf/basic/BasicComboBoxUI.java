@@ -1436,8 +1436,6 @@ public class BasicComboBoxUI extends ComboBoxUI {
             int baseline = -1;
             Dimension d;
 
-            Component cpn;
-
             if (modelSize > 0 ) {
                 for (int i = 0; i < modelSize ; i++ ) {
                     // Calculates the maximum height and width based on the largest

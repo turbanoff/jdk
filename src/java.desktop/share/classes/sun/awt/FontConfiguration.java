@@ -891,9 +891,6 @@ public abstract class FontConfiguration {
     }
 
     protected FontDescriptor[] buildFontDescriptors(int fontIndex, int styleIndex) {
-        String fontName = fontNames[fontIndex];
-        String styleName = styleNames[styleIndex];
-
         short[] scriptIDs = getCoreScripts(fontIndex);
         short[] nameIDs = compFontNameIDs[fontIndex][styleIndex];
         String[] sequence = new String[scriptIDs.length];
@@ -1020,8 +1017,6 @@ public abstract class FontConfiguration {
     public CompositeFontDescriptor[] get2DCompositeFontInfo() {
         CompositeFontDescriptor[] result =
                 new CompositeFontDescriptor[NUM_FONTS * NUM_STYLES];
-        String defaultFontFile = fontManager.getDefaultFontFile();
-        String defaultFontFaceName = fontManager.getDefaultFontFaceName();
 
         for (int fontIndex = 0; fontIndex < NUM_FONTS; fontIndex++) {
             String fontName = publicFontNames[fontIndex];
@@ -1038,11 +1033,9 @@ public abstract class FontConfiguration {
             int[] exclusionRanges = new int[numExclusionRanges];
             int[] exclusionRangeLimits = new int[exclusions.length];
             int exclusionRangeIndex = 0;
-            int exclusionRangeLimitIndex = 0;
             for (int i = 0; i < exclusions.length; i++) {
                 int[] componentRanges = exclusions[i];
                 for (int j = 0; j < componentRanges.length; ) {
-                    int value = componentRanges[j];
                     exclusionRanges[exclusionRangeIndex++] = componentRanges[j++];
                     exclusionRanges[exclusionRangeIndex++] = componentRanges[j++];
                 }
@@ -1197,7 +1190,6 @@ public abstract class FontConfiguration {
                 numFallbackFonts++;
             }
             componentFonts = new String[numCoreFonts + numFallbackFonts];
-            String filename = null;
             for (i = 0; i < core.length; i++) {
                 short fontid = core[i];
                 short fileid = getComponentFileID(fontid);

@@ -253,8 +253,6 @@ public class MetalSliderUI extends BasicSliderUI {
             oceanPaintTrack(g);
             return;
         }
-        Color trackColor = !slider.isEnabled() ? MetalLookAndFeel.getControlShadow() :
-                           slider.getForeground();
 
         boolean leftToRight = MetalUtils.isLeftToRight(slider);
 

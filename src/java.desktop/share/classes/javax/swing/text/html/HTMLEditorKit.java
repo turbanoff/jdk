@@ -931,7 +931,6 @@ public class HTMLEditorKit extends StyledEditorKit implements Accessible {
                 AttributeSet a = e.getAttributes();
                 AttributeSet anchor = (AttributeSet)a.getAttribute(HTML.Tag.A);
                 HyperlinkEvent linkEvent = null;
-                String description;
                 int x = -1;
                 int y = -1;
 
@@ -2482,8 +2481,6 @@ public class HTMLEditorKit extends StyledEditorKit implements Accessible {
             int currentOffset = editor.getCaretPosition();
 
             // invoke the next link or object action
-            String urlString = null;
-            String objString = null;
             Element currentElement;
             while ((currentElement = ei.next()) != null) {
                 String name = currentElement.getName();

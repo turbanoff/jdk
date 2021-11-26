@@ -287,7 +287,6 @@ public class JMenu extends JMenuItem implements Accessible,MenuElement
             = "When the menu is selected, its popup child is shown.")
     public void setSelected(boolean b) {
         ButtonModel model = getModel();
-        boolean oldValue = model.isSelected();
 
         // TIGER - 4840653
         // Removed code which fired an AccessibleState.SELECTED
@@ -298,7 +297,7 @@ public class JMenu extends JMenuItem implements Accessible,MenuElement
         // name of the item twice.
 
         if (b != model.isSelected()) {
-            getModel().setSelected(b);
+            model.setSelected(b);
         }
     }
 
@@ -529,7 +528,6 @@ public class JMenu extends JMenuItem implements Accessible,MenuElement
 
     private void ensurePopupMenuCreated() {
         if (popupMenu == null) {
-            final JMenu thisMenu = this;
             this.popupMenu = new JPopupMenu();
             popupMenu.setInvoker(this);
             popupListener = createWinListener(popupMenu);

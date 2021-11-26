@@ -75,7 +75,6 @@ public class MetalScrollPaneUI extends BasicScrollPaneUI
 
         super.installUI(c);
 
-        JScrollPane sp = (JScrollPane)c;
         updateScrollbarsFreeStanding();
     }
 

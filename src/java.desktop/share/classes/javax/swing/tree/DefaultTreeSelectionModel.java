@@ -782,7 +782,6 @@ public class DefaultTreeSelectionModel implements Cloneable, Serializable, TreeS
         listSelectionModel.clearSelection();
         if(selection != null && rowMapper != null) {
             int               aRow;
-            int               validCount = 0;
             int[]             rows = rowMapper.getRowsForPaths(selection);
 
             for(int counter = 0, maxCounter = selection.length;
@@ -1052,7 +1051,6 @@ public class DefaultTreeSelectionModel implements Cloneable, Serializable, TreeS
             BitSet               bitSet = new BitSet();
             int                  counter;
             int                  pathCount = paths.length;
-            int                  anIndex;
             int                  min = -1;
             int                  validCount = 0;
             TreePath[]           tempPath = new TreePath[1];

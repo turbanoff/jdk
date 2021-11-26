@@ -477,7 +477,6 @@ class XFramePeer extends XDecoratedPeer implements FramePeer {
         super.print(g);
 
         Frame f = (Frame)target;
-        Insets finsets = f.getInsets();
         Dimension fsize = f.getSize();
 
         Color bg = f.getBackground();
@@ -675,7 +674,6 @@ class XFramePeer extends XDecoratedPeer implements FramePeer {
 
         XMenuBarPeer peer = menubarPeer;
         if (peer != null) {
-            Insets insets = getInsets();
             Graphics ng = g.create();
             int menubarX = 0;
             int menubarY = 0;

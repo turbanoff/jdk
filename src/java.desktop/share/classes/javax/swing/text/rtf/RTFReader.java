@@ -169,8 +169,6 @@ class RTFReader extends RTFParser
  */
 public RTFReader(StyledDocument destination)
 {
-    int i;
-
     target = destination;
     parserState = new Hashtable<Object, Object>();
     fontTable = new Hashtable<Integer, String>();
@@ -1209,8 +1207,6 @@ abstract class AttributeTrackingDestination implements Destination
 
     public boolean handleKeyword(String keyword, int parameter)
     {
-        boolean booleanParameter = (parameter != 0);
-
         if (keyword.equals("fc"))
             keyword = "cf"; /* whatEVER, dude. */
 
@@ -1458,8 +1454,6 @@ abstract class AttributeTrackingDestination implements Destination
     {
         /* NB if there were a mutableCopy() method we should use it */
         MutableAttributeSet bld = new SimpleAttributeSet(paragraphAttributes);
-
-        Integer stateItem;
 
         /*** Tab stops ***/
         TabStop[] tabs;

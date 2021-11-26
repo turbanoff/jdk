@@ -246,7 +246,6 @@ public class PNGImageDecoder extends ImageDecoder
             if(interlaceMethod!=0) {pixSize *= height;rowStride=width;}
             else rowStride = 0;
             int combinedType = colorType|(bitDepth<<3);
-            int bitMask = (1<<(bitDepth>=8?8:bitDepth))-1;
             //Figure out the color model
             switch(colorType) {
                 case COLOR|PALETTE:
@@ -308,13 +307,10 @@ public class PNGImageDecoder extends ImageDecoder
                 int row = startingRow[pass];
                 int rowInc = rowIncrement[pass];
                 int colInc = colIncrement[pass];
-                int bWidth = blockWidth[pass];
-                int bHeight = blockHeight[pass];
                 int sCol = startingCol[pass];
                 int rowPixelWidth = (width-sCol+(colInc-1))/colInc;
                 int rowByteWidth = ((rowPixelWidth*bitsPerPixel)+7)>>3;
                 if(rowByteWidth==0) continue;
-                int pixelBufferInc = interlaceMethod==0 ? rowInc*width : 0;
                 int rowOffset = rowStride*row;
                 boolean firstRow = true;
 
@@ -509,7 +505,7 @@ public class PNGImageDecoder extends ImageDecoder
                 for ( ; x < bytesPerSample; x++)
                     rowByteBuffer[x] += prevRow[x];
                 for ( ; x < rowByteWidth; x++) {
-                    int a, b, c, p, pa, pb, pc, rval;
+                    int a, b, c, p, pa, pb, pc;
                     a = rowByteBuffer[x - bytesPerSample]&0xFF;
                     b = prevRow[x]&0xFF;
                     c = prevRow[x - bytesPerSample]&0xFF;

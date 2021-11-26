@@ -585,7 +585,6 @@ public abstract class SampleModel
                                 Object obj, DataBuffer data) {
 
         int cnt = 0;
-        Object o = null;
         int type = getTransferType();
         int numDataElems = getNumDataElements();
 

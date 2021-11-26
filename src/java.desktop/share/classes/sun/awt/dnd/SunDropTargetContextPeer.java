@@ -443,7 +443,6 @@ public abstract class SunDropTargetContextPeer implements DropTargetContextPeer,
                                       boolean operationChanged) {
         Component         c    = (Component)event.getSource();
         Point             hots = event.getPoint();
-        int               id   = event.getID();
         DropTarget        dt   = c.getDropTarget();
         DropTargetContext dtc  = null;
         DropTargetContextAccessor acc =

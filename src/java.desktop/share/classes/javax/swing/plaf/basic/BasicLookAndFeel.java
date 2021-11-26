@@ -484,7 +484,6 @@ public abstract class BasicLookAndFeel extends LookAndFeel implements Serializab
         ColorUIResource white = new ColorUIResource(Color.white);
         ColorUIResource yellow = new ColorUIResource(Color.yellow);
         ColorUIResource gray = new ColorUIResource(Color.gray);
-        ColorUIResource lightGray = new ColorUIResource(Color.lightGray);
         ColorUIResource darkGray = new ColorUIResource(Color.darkGray);
         ColorUIResource scrollBarTrack = new ColorUIResource(224, 224, 224);
 

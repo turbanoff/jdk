@@ -201,7 +201,6 @@ public class DefaultDesktopManager implements DesktopManager, java.io.Serializab
         }
 
         if (c instanceof JLayeredPane) {
-            JLayeredPane lp = (JLayeredPane)c;
             int layer = JLayeredPane.getLayer(f);
             JLayeredPane.putLayer(desktopIcon, layer);
         }
@@ -260,7 +259,6 @@ public class DefaultDesktopManager implements DesktopManager, java.io.Serializab
       */
     public void activateFrame(JInternalFrame f) {
         Container p = f.getParent();
-        Component[] c;
         JDesktopPane d = f.getDesktopPane();
         JInternalFrame currentlyActiveFrame =
           (d == null) ? null : d.getSelectedFrame();

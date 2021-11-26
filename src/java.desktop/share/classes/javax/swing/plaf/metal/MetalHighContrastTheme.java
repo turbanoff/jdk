@@ -119,8 +119,6 @@ class MetalHighContrastTheme extends DefaultMetalTheme {
     public void addCustomEntriesToTable(UIDefaults table) {
         Border blackLineBorder = new BorderUIResource(new LineBorder(
                     getBlack()));
-        Border whiteLineBorder = new BorderUIResource(new LineBorder(
-                    getWhite()));
         Object textBorder = new BorderUIResource(new CompoundBorder(
                    blackLineBorder, new BasicBorders.MarginBorder()));
 

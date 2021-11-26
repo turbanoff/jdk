@@ -144,7 +144,6 @@ public class ViewportLayout implements LayoutManager, Serializable
          * vpSize which we're converting.
          */
 
-        Insets insets = vp.getInsets();
         Dimension viewPrefSize = view.getPreferredSize();
         Dimension vpSize = vp.getSize();
         Dimension extentSize = vp.toViewCoordinates(vpSize);

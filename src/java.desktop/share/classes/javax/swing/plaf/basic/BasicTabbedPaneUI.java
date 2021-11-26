@@ -2690,7 +2690,6 @@ public class BasicTabbedPaneUI extends TabbedPaneUI implements SwingConstants {
             Insets contentInsets = getContentBorderInsets(tabPlacement);
             Insets tabAreaInsets = getTabAreaInsets(tabPlacement);
 
-            Dimension zeroSize = new Dimension(0,0);
             int height = 0;
             int width = 0;
             int cWidth = 0;

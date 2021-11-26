@@ -1217,7 +1217,6 @@ public class BMPImageWriter extends ImageWriter implements BMPConstants {
                             stream.writeByte(01);
                             pixel =  bipixels[j]<<4 |0;
                             stream.writeByte(pixel);
-                            int n = bipixels[j]<<4|0;
                             incCompImageSize(4);
                         }
                     } else {

@@ -780,7 +780,6 @@ public class ProcessPath {
                                              int[] pixelInfo) {
 
         float[] coords1 = new float[6];
-        float tx, ty;
         float xMin, yMin, xMax, yMax;
 
         xMin = xMax = coords[0];
@@ -1361,7 +1360,6 @@ public class ProcessPath {
         float xMin, yMin, xMax, yMax;
         int X1, Y1, X2, Y2, X3, Y3, res;
         boolean clipped = false;
-        float x3,y3;
         float[] c = new float[]{x1, y1, x2, y2, 0, 0};
 
         boolean lastClipped;
@@ -1469,7 +1467,6 @@ public class ProcessPath {
         float[] coords = new float[8];
         float[] tCoords = new float[8];
         float[] closeCoord = new float[] {0.0f, 0.0f};
-        float[] firstCoord = new float[2];
         int[] pixelInfo = new int[5];
         boolean subpathStarted = false;
         boolean skip = false;
@@ -1898,7 +1895,6 @@ public class ProcessPath {
                                     int fillRule) {
         int k, y, n;
         boolean drawing;
-        Edge active;
         int rightBnd = hnd.dhnd.xMax - 1;
         FillData fd = hnd.fd;
         int yMin = fd.plgYMin;
@@ -1917,7 +1913,6 @@ public class ProcessPath {
         int counterMask =
             (fillRule == PathIterator.WIND_NON_ZERO)? -1:1;
 
-        int pntOffset;
         List<Point> pnts = fd.plgPnts;
         n = pnts.size();
 

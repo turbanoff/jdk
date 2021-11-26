@@ -71,7 +71,6 @@ public class X11GB2312 extends Charset {
 
             byte[] da = dst.array();
             int dp = dst.arrayOffset() + dst.position();
-            int dl = dst.arrayOffset() + dst.limit();
 
             try {
                 while (sp < sl) {

@@ -904,8 +904,7 @@ public class JTableHeader extends JComponent implements TableColumnModelListener
             if (i < 0 || i >= getAccessibleChildrenCount()) {
                 return null;
             } else {
-                TableColumn aColumn = JTableHeader.this.columnModel.getColumn(i)
-;
+                TableColumn aColumn = JTableHeader.this.columnModel.getColumn(i);
                 TableCellRenderer renderer = aColumn.getHeaderRenderer();
                 if (renderer == null) {
                     if (defaultRenderer != null) {

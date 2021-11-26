@@ -621,9 +621,6 @@ class MotifDnDDropTargetProtocol extends XDropTargetProtocol {
             return false;
         }
 
-        long property_atom =
-            MotifDnDConstants.Swapper.getInt(data + 12, eventByteOrder);
-
         short flags =
             MotifDnDConstants.Swapper.getShort(data + 2, eventByteOrder);
 

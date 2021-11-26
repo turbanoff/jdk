@@ -995,8 +995,7 @@ public class JTree extends JComponent implements Scrollable, Accessible
     @BeanProperty(description
             = "Whether the node handles are to be displayed.")
     public void setShowsRootHandles(boolean newValue) {
-        boolean                oldValue = showsRootHandles;
-        TreeModel              model = getModel();
+        boolean oldValue = showsRootHandles;
 
         showsRootHandles = newValue;
         showsRootHandlesSet = true;

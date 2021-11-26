@@ -136,7 +136,6 @@ class BasicTransferable implements Transferable, UIResource {
      *              not supported.
      */
     public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
-        DataFlavor[] richerFlavors = getRicherFlavors();
         if (isRicherFlavor(flavor)) {
             return getRicherData(flavor);
         } else if (isHTMLFlavor(flavor)) {

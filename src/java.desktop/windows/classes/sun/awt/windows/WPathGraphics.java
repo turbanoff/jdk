@@ -782,7 +782,6 @@ final class WPathGraphics extends PathGraphics {
              * and with fallback fonts.
              */
             CompositeFont compFont = (CompositeFont)font2D;
-            float userx = x, usery = y;
             float devx = devpos.x, devy = devpos.y;
 
             int start = 0, end = 0, slot = 0;
@@ -869,7 +868,6 @@ final class WPathGraphics extends PathGraphics {
                  return;
              }
              glyphPos = gv.getGlyphPositions(0, len, null);
-             Point2D gvAdvPt = gv.getGlyphPosition(gv.getNumGlyphs());
 
              /* GDI advances must not include device space rotation.
               * See earlier comment in printGlyphVector() for details.
@@ -1131,14 +1129,6 @@ final class WPathGraphics extends PathGraphics {
                 if (drawOpaque == false) {
 
                     fullTransform.getMatrix(fullMatrix);
-                    AffineTransform tx =
-                        new AffineTransform(
-                                            fullMatrix[0] / devScaleX,  //m00
-                                            fullMatrix[1] / devScaleY,  //m10
-                                            fullMatrix[2] / devScaleX,  //m01
-                                            fullMatrix[3] / devScaleY,  //m11
-                                            fullMatrix[4] / devScaleX,  //m02
-                                            fullMatrix[5] / devScaleY); //m12
 
                     Rectangle2D.Float rect =
                         new Rectangle2D.Float(srcX, srcY, srcWidth, srcHeight);

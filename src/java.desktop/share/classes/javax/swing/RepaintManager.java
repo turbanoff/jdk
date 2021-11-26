@@ -946,7 +946,6 @@ public class RepaintManager
                                 java.util.List<Component> roots) {
         int dx, dy, rootDx, rootDy;
         Component component, rootDirtyComponent,parent;
-        Rectangle cBounds;
 
         // Find the highest parent which is dirty.  When we get out of this
         // rootDx and rootDy will contain the translation from the

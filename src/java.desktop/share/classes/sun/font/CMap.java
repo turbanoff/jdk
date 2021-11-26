@@ -154,7 +154,6 @@ abstract class CMap {
         boolean threeStar = false;
 
         ByteBuffer cmapBuffer = font.getTableBuffer(TrueTypeFont.cmapTag);
-        int cmapTableOffset = font.getTableSize(TrueTypeFont.cmapTag);
         short numberSubTables = cmapBuffer.getShort(2);
 
         /* locate the offsets of all 3,*  (ie Microsoft platform) encodings */

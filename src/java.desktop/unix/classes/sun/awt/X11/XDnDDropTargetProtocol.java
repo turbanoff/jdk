@@ -323,7 +323,6 @@ class XDnDDropTargetProtocol extends XDropTargetProtocol {
         boolean overriden = false;
         int version = 0;
         long proxy = 0;
-        long newProxy = XDropTargetRegistry.getDnDProxyWindow();
         int status = 0;
 
         WindowPropertyGetter wpg1 =
@@ -583,7 +582,6 @@ class XDnDDropTargetProtocol extends XDropTargetProtocol {
     }
 
     private boolean processXdndPosition(XClientMessageEvent xclient) {
-        long time_stamp = (int)XConstants.CurrentTime;
         long xdnd_action = 0;
         int java_action = DnDConstants.ACTION_NONE;
         int x = 0;

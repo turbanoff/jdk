@@ -1133,7 +1133,6 @@ public class BasicMenuItemUI extends MenuItemUI
                 return;
             }
             MenuSelectionManager manager = e.getMenuSelectionManager();
-            MenuElement[] path = e.getPath();
             Point p = e.getPoint();
             if (p.x >= 0 && p.x < menuItem.getWidth() &&
                     p.y >= 0 && p.y < menuItem.getHeight()) {

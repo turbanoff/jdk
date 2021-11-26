@@ -368,8 +368,6 @@ class XWindow extends XBaseWindow implements X11ComponentPeer {
     Graphics getGraphics(SurfaceData surfData, Color afore, Color aback, Font afont) {
         if (surfData == null) return null;
 
-        Component target = this.target;
-
         /* Fix for bug 4746122. Color and Font shouldn't be null */
         Color bgColor = aback;
         if (bgColor == null) {
@@ -961,13 +959,9 @@ class XWindow extends XBaseWindow implements X11ComponentPeer {
         int modifiers = getModifiers(xce.get_state(),0,0);
         int clickCount = 0;
         boolean popupTrigger = false;
-        int x = scaleDown(xce.get_x());
-        int y = scaleDown(xce.get_y());
         if (xce.get_window() != window) {
             Point localXY = toLocal(scaleDown(xce.get_x_root()),
                                     scaleDown(xce.get_y_root()));
-            x = localXY.x;
-            y = localXY.y;
         }
 
         // This code tracks boundary crossing and ensures MOUSE_ENTER/EXIT

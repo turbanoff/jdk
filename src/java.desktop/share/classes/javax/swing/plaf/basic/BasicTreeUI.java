@@ -3701,7 +3701,6 @@ public class BasicTreeUI extends TreeUI
                 htmlStr.append("<html>\n<body>\n<ul>\n");
 
                 TreeModel model = tree.getModel();
-                TreePath lastPath = null;
                 TreePath[] displayPaths = getDisplayOrderPaths(paths);
 
                 for (TreePath path : displayPaths) {

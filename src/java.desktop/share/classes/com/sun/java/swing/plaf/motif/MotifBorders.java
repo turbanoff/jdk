@@ -392,7 +392,6 @@ public class MotifBorders {
         protected boolean drawBottomBorder(Component c, Graphics g, int x, int y,
                                  int width, int height) {
             Rectangle    borderRect;
-            int     marginHeight, startY;
 
             borderRect = new Rectangle(0, height - getBorderInsets(c).bottom,
                                   width, getBorderInsets(c).bottom);
@@ -400,7 +399,7 @@ public class MotifBorders {
                 return false;
             }
 
-            startY = height - getBorderInsets(c).bottom;
+            int startY = height - getBorderInsets(c).bottom;
 
             g.setColor(frameShadow);
             g.drawLine(x + 1, height - 1, width - 1, height - 1);

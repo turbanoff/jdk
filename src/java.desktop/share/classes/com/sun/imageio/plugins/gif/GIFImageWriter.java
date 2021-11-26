@@ -137,7 +137,6 @@ public class GIFImageWriter extends ImageWriter {
     private static void computeRegions(Rectangle sourceBounds,
                                        Dimension destSize,
                                        ImageWriteParam p) {
-        ImageWriteParam param;
         int periodX = 1;
         int periodY = 1;
         if (p != null) {
@@ -889,7 +888,6 @@ public class GIFImageWriter extends ImageWriter {
         int sourceXOffset = sourceBounds.x;
         int sourceYOffset = sourceBounds.y;
         int sourceWidth = sourceBounds.width;
-        int sourceHeight = sourceBounds.height;
 
         int destWidth = destSize.width;
         int destHeight = destSize.height;

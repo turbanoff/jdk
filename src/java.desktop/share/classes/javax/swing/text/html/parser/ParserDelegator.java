@@ -89,7 +89,6 @@ public class ParserDelegator extends HTMLEditorKit.Parser implements Serializabl
     protected static DTD createDTD(DTD dtd, String name) {
 
         InputStream in = null;
-        boolean debug = true;
         try {
             String path = name + ".bdtd";
             in = getResourceAsStream(path);

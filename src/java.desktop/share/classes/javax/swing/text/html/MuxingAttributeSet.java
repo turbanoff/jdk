@@ -179,7 +179,6 @@ class MuxingAttributeSet implements AttributeSet, Serializable {
     public AttributeSet copyAttributes() {
         AttributeSet[] as = getAttributes();
         MutableAttributeSet a = new SimpleAttributeSet();
-        int n = 0;
         for (int i = as.length - 1; i >= 0; i--) {
             a.addAttributes(as[i]);
         }

@@ -424,7 +424,6 @@ public class SwingUtilities implements SwingConstants
      */
     @SuppressWarnings("removal")
     public static void convertPointToScreen(Point p,Component c) {
-            Rectangle b;
             int x,y;
 
             do {
@@ -464,7 +463,6 @@ public class SwingUtilities implements SwingConstants
      */
     @SuppressWarnings("removal")
     public static void convertPointFromScreen(Point p,Component c) {
-        Rectangle b;
         int x,y;
 
         do {

@@ -72,7 +72,6 @@ public class XIconWindow extends XBaseWindow {
         XToolkit.awtLock();
         try {
             AwtGraphicsConfigData adata = parent.getGraphicsConfigurationData();
-            final long screen = adata.get_awt_visInfo().get_screen();
             final long display = XToolkit.getDisplay();
 
             if (log.isLoggable(PlatformLogger.Level.FINEST)) {
@@ -383,7 +382,6 @@ public class XIconWindow extends XBaseWindow {
                 return;  //The iconMask is 0 now, we have done everything
             }
             AwtGraphicsConfigData adata = parent.getGraphicsConfigurationData();
-            awtImageData awtImage = adata.get_awtImage(0);
             XVisualInfo visInfo = adata.get_awt_visInfo();
             ColorModel cm = bi.getColorModel();
             DataBuffer srcBuf = bi.getRaster().getDataBuffer();

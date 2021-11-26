@@ -475,8 +475,8 @@ public class XComponentPeer extends XWindow implements ComponentPeer, DropTarget
                   !target.isFocusOwner() &&
                   XKeyboardFocusManagerPeer.shouldFocusOnClick(target))
               {
-                  XWindowPeer parentXWindow = getParentTopLevel();
-                  Window parentWindow = ((Window)parentXWindow.getTarget());
+                  // XWindowPeer parentXWindow = getParentTopLevel();
+                  // Window parentWindow = ((Window)parentXWindow.getTarget());
                   // Simple windows are non-focusable in X terms but focusable in Java terms.
                   // As X-non-focusable they don't receive any focus events - we should generate them
                   // by ourselfves.

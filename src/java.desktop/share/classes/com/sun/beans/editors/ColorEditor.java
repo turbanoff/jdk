@@ -68,7 +68,6 @@ public class ColorEditor extends Panel implements PropertyEditor {
         ourWidth += 100 + hPad;
 
         choser = new Choice();
-        int active = 0;
         for (int i = 0; i < colorNames.length; i++) {
             choser.addItem(colorNames[i]);
         }

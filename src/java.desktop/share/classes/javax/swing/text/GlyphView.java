@@ -1018,7 +1018,6 @@ public class GlyphView extends View implements TabableView, Cloneable {
         int txtEnd = segment.offset + segment.count - 1;
         int startContentPosition = txtEnd + 1;
         int endContentPosition = txtOffset - 1;
-        int lastTabPosition = txtOffset - 1;
         int trailingSpaces = 0;
         int contentSpaces = 0;
         int leadingSpaces = 0;
@@ -1293,7 +1292,6 @@ public class GlyphView extends View implements TabableView, Cloneable {
 
             int startOffset = v.getStartOffset();
             int endOffset = v.getEndOffset();
-            Segment text;
 
             switch (direction) {
             case View.NORTH:
@@ -1301,7 +1299,7 @@ public class GlyphView extends View implements TabableView, Cloneable {
                 if (pos != -1) {
                     // Presumably pos is between startOffset and endOffset,
                     // since GlyphView is only one line, we won't contain
-                    // the position to the nort/south, therefore return -1.
+                    // the position to the north/south, therefore return -1.
                     return -1;
                 }
                 Container container = v.getContainer();

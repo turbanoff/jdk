@@ -7271,7 +7271,6 @@ public class JTable extends JComponent implements TableModelListener, Scrollable
                 return null;
             }
 
-            int rowsSel = JTable.this.getSelectedRowCount();
             int colsSel = JTable.this.getSelectedColumnCount();
             int[] rowIndicies = getSelectedRows();
             int[] colIndicies = getSelectedColumns();

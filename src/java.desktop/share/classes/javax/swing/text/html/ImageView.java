@@ -767,7 +767,6 @@ public class ImageView extends View {
 
         if (newImage != null) {
             Element elem = getElement();
-            AttributeSet attr = elem.getAttributes();
 
             // Get the width/height and set the state ivar before calling
             // anything that might cause the image to be loaded, and thus the

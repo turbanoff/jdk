@@ -401,7 +401,6 @@ public class PaletteBuilder {
         int leafChildCount = thisNode.getLeafChildCount();
         thisNode.isLeaf = true;
         currSize -= (leafChildCount - 1);
-        int aDepth = thisNode.level;
         for (int i = 0; i < 8; i++) {
             thisNode.children[i] = freeTree(thisNode.children[i]);
         }

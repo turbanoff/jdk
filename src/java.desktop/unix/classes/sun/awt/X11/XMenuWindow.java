@@ -219,12 +219,12 @@ public class XMenuWindow extends XBaseMenuWindow {
         XMenuItemPeer.TextMetrics[] itemMetrics = new XMenuItemPeer.TextMetrics[itemCnt];
         for (int i = 0; i < itemCnt; i++) {
             XMenuItemPeer item = itemVector[i];
-            itemMetrics[i] = itemVector[i].getTextMetrics();
+            itemMetrics[i] = item.getTextMetrics();
             Dimension dim = itemMetrics[i].getTextDimension();
             if (dim != null) {
-                if (itemVector[i] instanceof XCheckboxMenuItemPeer) {
+                if (item instanceof XCheckboxMenuItemPeer) {
                     maxLeftIndent = Math.max(maxLeftIndent, dim.height);
-                } else if (itemVector[i] instanceof XMenuPeer) {
+                } else if (item instanceof XMenuPeer) {
                     maxRightIndent = Math.max(maxRightIndent, dim.height);
                 }
                 maxWidth = Math.max(maxWidth, dim.width);
@@ -452,7 +452,6 @@ public class XMenuWindow extends XBaseMenuWindow {
 
         //Paint menus
         XMenuItemPeer[] itemVector = mappingData.getItems();
-        Dimension windowSize =  mappingData.getDesiredSize();
         XMenuItemPeer selectedItem = getSelectedItem();
         for (int i = 0; i < itemVector.length; i++) {
             XMenuItemPeer item = itemVector[i];

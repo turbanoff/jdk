@@ -437,7 +437,6 @@ class SynthParser extends DefaultHandler {
     }
 
     private void startState(Attributes attributes) throws SAXException {
-        ParsedSynthStyle.StateInfo stateInfo = null;
         int state = 0;
         String id = null;
 

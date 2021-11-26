@@ -441,7 +441,6 @@ public class FixedHeightLayoutCache extends AbstractLayoutCache {
             // ascending order.
             if(changedParentNode != null && changedIndexs != null &&
                (maxCounter = changedIndexs.length) > 0) {
-                Object[]           children = e.getChildren();
                 boolean            isVisible =
                     (changedParentNode.isVisible() &&
                      changedParentNode.isExpanded());
@@ -867,7 +866,6 @@ public class FixedHeightLayoutCache extends AbstractLayoutCache {
         public int getRowToModelIndex(int index) {
             FHTreeStateNode      child;
             int                  lastRow = getRow() + 1;
-            int                  retValue = lastRow;
 
             // This too could be a binary search!
             for(int counter = 0, maxCounter = getChildCount();

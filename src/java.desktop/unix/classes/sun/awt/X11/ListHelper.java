@@ -387,8 +387,6 @@ final class ListHelper implements XScrollbarClient {
     }
     @SuppressWarnings("deprecation")
     void handleVSBEvent(MouseEvent e, Rectangle bounds, int x, int y) {
-        int sbHeight = hsbVis ? bounds.height - SCROLLBAR_WIDTH : bounds.height;
-
         vsb.handleMouseEvent(e.getID(),
                              e.getModifiers(),
                              x - (bounds.width - SCROLLBAR_WIDTH),
@@ -558,8 +556,6 @@ final class ListHelper implements XScrollbarClient {
         //g.clipRect(x, y, width, height);
         //g.drawString(string, x + TEXT_SPACE, y + TEXT_SPACE + ITEM_MARGIN);
 
-        int fontAscent = fm.getAscent();
-        int fontDescent = fm.getDescent();
 
         g.drawString(string, x + TEXT_SPACE, y + (height + fm.getMaxAscent() - fm.getMaxDescent())/2);
         //g.clipRect(clip.x, clip.y, clip.width, clip.height);
@@ -575,7 +571,6 @@ final class ListHelper implements XScrollbarClient {
     }
 
     private void paintVSB(Graphics g, Color[] colors, Rectangle bounds) {
-        int height = bounds.height - 2*BORDER_WIDTH - (hsbVis ? (SCROLLBAR_WIDTH-2) : 0);
         Graphics ng = g.create();
 
         g.setColor(colors[XComponentPeer.BACKGROUND_COLOR]);

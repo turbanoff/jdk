@@ -245,8 +245,6 @@ public class BasicSplitPaneDivider extends Container
      * @since 1.3
      */
     public void setBorder(Border border) {
-        Border         oldBorder = this.border;
-
         this.border = border;
     }
 

@@ -1573,7 +1573,6 @@ public class StyleSheet extends StyleContext {
         @SuppressWarnings("unchecked")
         Vector<String> elements = sb.getVector();
         try {
-            boolean done;
             int dotIndex = 0;
             int spaceIndex;
             int poundIndex = 0;
@@ -2155,7 +2154,6 @@ public class StyleSheet extends StyleContext {
                 if (type == null) {
                     // Parent view.
                     View v = childView.getParent();
-                    HTMLDocument doc = (HTMLDocument)v.getDocument();
                     if (HTMLDocument.matchNameAttribute(v.getElement().getAttributes(),
                                                         HTML.Tag.OL)) {
                         childtype = CSS.Value.DECIMAL;
@@ -2407,8 +2405,6 @@ public class StyleSheet extends StyleContext {
          */
         @SuppressWarnings("fallthrough")
         String formatItemNum(int itemNum, char type) {
-            String numStyle = "1";
-
             boolean uppercase = false;
 
             String formattedNum;
@@ -2896,7 +2892,6 @@ public class StyleSheet extends StyleContext {
          */
         synchronized void insertStyle(Style style, int specificity) {
             AttributeSet[] attrs = getAttributes();
-            int maxCounter = attrs.length;
             int counter = 0;
             for (;counter < extendedIndex; counter++) {
                 if (specificity > getSpecificity(((Style)attrs[counter]).

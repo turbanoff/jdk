@@ -177,7 +177,6 @@ class TextLayoutStrategy extends FlowView.FlowStrategy {
     protected View createView(FlowView fv, int startOffset, int spanLeft, int rowIndex) {
         // Get the child view that contains the given starting position
         View lv = getLogicalView(fv);
-        View row = fv.getView(rowIndex);
         boolean requireNextWord = (viewBuffer.size() == 0) ? false : true;
         int childIndex = lv.getViewIndex(startOffset, Position.Bias.Forward);
         View v = lv.getView(childIndex);

@@ -105,7 +105,6 @@ public class MotifIconFactory implements Serializable
 
             boolean isPressed = model.isPressed();
             boolean isArmed = model.isArmed();
-            boolean isEnabled = model.isEnabled();
             boolean isSelected = model.isSelected();
 
             // There are 4 "looks" to the Motif CheckBox:
@@ -167,7 +166,6 @@ public class MotifIconFactory implements Serializable
         }
 
         public void drawCheckBezelOut(Graphics g, int x, int y, int csize){
-            Color controlShadow = UIManager.getColor("controlShadow");
 
             int w = csize;
             int h = csize;
@@ -268,7 +266,6 @@ public class MotifIconFactory implements Serializable
 
             boolean isPressed = model.isPressed();
             boolean isArmed = model.isArmed();
-            boolean isEnabled = model.isEnabled();
             boolean isSelected = model.isSelected();
 
             boolean checkIn = ((isPressed &&

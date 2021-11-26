@@ -347,7 +347,6 @@ public class ImageRepresentation extends ImageWatched implements ImageConsumer
                           byte[] pix, int off, int scansize) {
         int lineOff=off;
         int poff;
-        int[] newLUT=null;
 
         if (src != null) {
             src.checkSecurity(null, false);
@@ -457,7 +456,6 @@ public class ImageRepresentation extends ImageWatched implements ImageConsumer
             }
 
             if (isDefaultBI) {
-                int pixel;
                 IntegerComponentRaster iraster =
                                           (IntegerComponentRaster) biRaster;
                 if (srcLUT != null && model instanceof IndexColorModel) {

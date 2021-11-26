@@ -413,9 +413,7 @@ public final class XDragSourceContextPeer
 
     private void doUpdateTargetWindow(long subwindow, long time) {
         long clientWindow = 0;
-        long proxyWindow = 0;
         XDragSourceProtocol protocol = null;
-        boolean isReceiver = false;
 
         if (subwindow != 0) {
             clientWindow = findClientWindow(subwindow);

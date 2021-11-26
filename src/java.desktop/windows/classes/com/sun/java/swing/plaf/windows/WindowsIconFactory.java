@@ -465,7 +465,6 @@ public class WindowsIconFactory implements Serializable
                 Part part = Part.BP_RADIOBUTTON;
                 Skin skin = xp.getSkin(b, part);
                 State state;
-                int index = 0;
                 if (model.isSelected()) {
                     state = State.CHECKEDNORMAL;
                     if (!model.isEnabled()) {
@@ -639,7 +638,6 @@ public class WindowsIconFactory implements Serializable
     {
         public void paintIcon(Component c, Graphics g, int x, int y) {
             AbstractButton b = (AbstractButton) c;
-            ButtonModel model = b.getModel();
             if (b.isSelected() == true) {
                g.fillRoundRect(x+3,y+3, getIconWidth()-6, getIconHeight()-6,
                                4, 4);

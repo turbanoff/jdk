@@ -66,7 +66,6 @@ class XCanvasPeer extends XComponentPeer implements CanvasPeer {
 
         int screenNum = ((X11GraphicsDevice)gc.getDevice()).getScreen();
 
-        X11GraphicsConfig parentgc;
         // save vis id of current gc
         int visual = graphicsConfig.getVisual();
 

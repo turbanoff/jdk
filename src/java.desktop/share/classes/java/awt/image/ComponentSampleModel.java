@@ -320,8 +320,6 @@ public class ComponentSampleModel extends SampleModel
      *         {@code h} is not greater than 0
      */
     public SampleModel createCompatibleSampleModel(int w, int h) {
-        SampleModel ret=null;
-        long size;
         int minBandOff=bandOffsets[0];
         int maxBandOff=bandOffsets[0];
         for (int i=1; i<bandOffsets.length; i++) {

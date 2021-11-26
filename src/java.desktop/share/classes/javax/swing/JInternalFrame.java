@@ -2233,7 +2233,6 @@ public class JInternalFrame extends JComponent implements
          * @see JComponent#updateUI
          */
         public void updateUI() {
-            boolean hadUI = (ui != null);
             setUI((DesktopIconUI)UIManager.getUI(this));
             invalidate();
 

@@ -823,7 +823,6 @@ public class BasicButtonUI extends ButtonUI{
 
             // Update the component we will use as base to transfer
             // focus from
-            JComponent compTransferFocusFrom = activeBtn;
 
             // If next component in the parent window is not in
             // the button group, current active button will be

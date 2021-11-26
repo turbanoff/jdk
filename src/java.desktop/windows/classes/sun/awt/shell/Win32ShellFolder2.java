@@ -1052,7 +1052,6 @@ final class Win32ShellFolder2 extends ShellFolder {
      */
     public Image getIcon(final boolean getLargeIcon) {
         Image icon = getLargeIcon ? largeIcon : smallIcon;
-        int size = getLargeIcon ? LARGE_ICON_SIZE : SMALL_ICON_SIZE;
         if (icon == null) {
             icon =
                 invoke(new Callable<Image>() {

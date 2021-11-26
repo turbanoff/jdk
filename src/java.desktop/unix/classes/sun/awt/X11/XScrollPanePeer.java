@@ -487,11 +487,9 @@ class XScrollPanePeer extends XComponentPeer implements ScrollPanePeer, XScrollb
             case MouseEvent.MOUSE_PRESSED:
                 if (inVerticalScrollbar(x,y )) {
                     active = VERTICAL;
-                    int h = height - hsbSpace - (2*MARGIN);
                     vsb.handleMouseEvent(id,modifiers,x - (width - SCROLLBAR + SPACE),y-MARGIN);
                 } else if (inHorizontalScrollbar(x, y) ) {
                     active = HORIZONTAL;
-                    int w = width - 2*MARGIN - vsbSpace;
                     hsb.handleMouseEvent(id,modifiers,x-MARGIN,y-(height - SCROLLBAR + SPACE));
                 }
                 break;
@@ -510,10 +508,8 @@ class XScrollPanePeer extends XComponentPeer implements ScrollPanePeer, XScrollb
 
             case MouseEvent.MOUSE_DRAGGED:
                 if ((active == VERTICAL)) {
-                    int h = height - 2*MARGIN - hsbSpace;
                     vsb.handleMouseEvent(id,modifiers,x-(width - SCROLLBAR + SPACE),y-MARGIN);
                 } else if ((active == HORIZONTAL)) {
-                    int w = width - 2*MARGIN - vsbSpace;
                     hsb.handleMouseEvent(id,modifiers,x-MARGIN,y-(height - SCROLLBAR + SPACE));
                 }
                 break;
@@ -578,7 +574,6 @@ class XScrollPanePeer extends XComponentPeer implements ScrollPanePeer, XScrollb
         ScrollPane sp = (ScrollPane)target;
         Dimension d = sp.size();
         Color bg = sp.getBackground();
-        Color fg = sp.getForeground();
         Point p = sp.getScrollPosition();
         Component c = getScrollChild();
         Dimension cd;

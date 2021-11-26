@@ -1044,7 +1044,6 @@ final class XTextAreaPeer extends XComponentPeer implements TextAreaPeer {
 
         @Override
         protected void installDefaults(JScrollPane scrollpane) {
-            Border b = scrollpane.getBorder();
             UIDefaults uidefaults = XToolkit.getUIDefaults();
             scrollpane.setBorder(uidefaults.getBorder("ScrollPane.border"));
             scrollpane.setBackground(uidefaults.getColor("ScrollPane.background"));

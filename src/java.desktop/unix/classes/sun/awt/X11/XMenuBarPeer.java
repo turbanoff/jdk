@@ -528,7 +528,6 @@ public class XMenuBarPeer extends XBaseMenuWindow implements MenuBarPeer {
         if (isEventDisabled(xev)) {
             return;
         }
-        final Component currentSource = getEventSource();
         //This is the only difference from XWindow.handleKeyPress
         //Ancestor's function can invoke handleF10KeyPress here
         handleKeyPress(xkey);

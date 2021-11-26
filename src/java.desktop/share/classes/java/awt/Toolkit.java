@@ -2317,7 +2317,6 @@ public abstract class Toolkit {
         public void firePropertyChange(final PropertyChangeEvent evt) {
             Object oldValue = evt.getOldValue();
             Object newValue = evt.getNewValue();
-            String propertyName = evt.getPropertyName();
             if (oldValue != null && newValue != null && oldValue.equals(newValue)) {
                 return;
             }

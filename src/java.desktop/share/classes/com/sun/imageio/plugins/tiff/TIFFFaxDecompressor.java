@@ -678,7 +678,6 @@ class TIFFFaxDecompressor extends TIFFDecompressor {
         int bits = 0, code = 0, isT = 0;
         int current, entry, twoBits;
         boolean isWhite = true;
-        int dstEnd = 0;
 
         int bitOffset = 0;
 
@@ -850,7 +849,7 @@ class TIFFFaxDecompressor extends TIFFDecompressor {
 
         int a0, a1, b1, b2;
         int[] b = new int[2];
-        int entry, code, bits, color;
+        int entry, code, bits;
         boolean isWhite;
         int currIndex = 0;
         int[] temp;
@@ -1022,11 +1021,8 @@ class TIFFFaxDecompressor extends TIFFDecompressor {
     public synchronized void decodeT6() throws IIOException {
         int height = h;
 
-        int bufferOffset = 0;
-
         int a0, a1, b1, b2;
         int entry, code, bits;
-        byte color;
         boolean isWhite;
         int currIndex;
         int[] temp;
@@ -1326,7 +1322,7 @@ class TIFFFaxDecompressor extends TIFFDecompressor {
 
     // Returns run length
     private int decodeBlackCodeWord() throws IIOException {
-        int current, entry, bits, isT, twoBits, code = -1;
+        int current, entry, bits, isT, code = -1;
         int runLength = 0;
         boolean isWhite = false;
 

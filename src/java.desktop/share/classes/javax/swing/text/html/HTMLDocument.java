@@ -788,8 +788,6 @@ public class HTMLDocument extends DefaultStyledDocument {
      */
     private void updateFrameSet(Element element, String url) {
         try {
-            int startOffset = element.getStartOffset();
-            int endOffset = Math.min(getLength(), element.getEndOffset());
             String html = "<frame";
             if (url != null) {
                 html += " src=\"" + url + "\"";
@@ -2406,7 +2404,6 @@ public class HTMLDocument extends DefaultStyledDocument {
             this.offset = offset;
             threshold = HTMLDocument.this.getTokenThreshold();
             tagMap = new Hashtable<HTML.Tag, TagAction>(57);
-            TagAction na = new TagAction();
             TagAction ba = new BlockAction();
             TagAction pa = new ParagraphAction();
             TagAction ca = new CharacterAction();
@@ -2710,7 +2707,6 @@ public class HTMLDocument extends DefaultStyledDocument {
         private Element[] getPathTo(int offset) {
             ArrayList<Element> elements = new ArrayList<Element>();
             Element e = getDefaultRootElement();
-            int index;
             while (!e.isLeaf()) {
                 elements.add(e);
                 e = e.getElement(e.getElementIndex(offset));

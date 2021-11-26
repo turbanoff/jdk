@@ -4868,7 +4868,6 @@ public abstract class JTextComponent extends JComponent implements Scrollable, A
 
     private void createComposedTextAttribute(int composedIndex,
                                         AttributedCharacterIterator text) {
-        Document doc = getDocument();
         StringBuilder strBuf = new StringBuilder();
 
         // create attributed string with no attributes

@@ -226,7 +226,6 @@ public class BasicIconFactory implements Serializable
     {
         public void paintIcon(Component c, Graphics g, int x, int y) {
             AbstractButton b = (AbstractButton) c;
-            ButtonModel model = b.getModel();
             if (b.isSelected() == true) {
                 g.fillOval(x+1, y+1, getIconWidth(), getIconHeight());
             }

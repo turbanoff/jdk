@@ -90,7 +90,6 @@ public class GeneralCompositePipe implements CompositePipe {
         SunGraphics2D sg = context.sunG2D;
 
         Raster srcRaster = paintCtxt.getRaster(x, y, w, h);
-        ColorModel paintModel = paintCtxt.getColorModel();
 
         Raster dstRaster;
         Raster dstIn;

@@ -158,11 +158,7 @@ public final class WaveFileWriter extends SunFileWriter {
         AudioFormat streamFormat = stream.getFormat();
         AudioFormat.Encoding streamEncoding = streamFormat.getEncoding();
 
-        float sampleRate;
         int sampleSizeInBits;
-        int channels;
-        int frameSize;
-        float frameRate;
         int fileSize;
 
         int waveType = WaveFileFormat.WAVE_FORMAT_PCM;
@@ -255,12 +251,10 @@ public final class WaveFileWriter extends SunFileWriter {
         short sampleSizeInBits = (short) audioFormat.getSampleSizeInBits();
         int sampleRate         = (int) audioFormat.getSampleRate();
         int frameSizeInBytes   = audioFormat.getFrameSize();
-        int frameRate              = (int) audioFormat.getFrameRate();
         int avgBytesPerSec     = channels * sampleSizeInBits * sampleRate / 8;
         short blockAlign       = (short) ((sampleSizeInBits / 8) * channels);
-        int dataMagic              = WaveFileFormat.DATA_MAGIC;
-        int dataLength             = waveFileFormat.getFrameLength() * frameSizeInBytes;
-        int length                         = waveFileFormat.getByteLength();
+        int dataMagic          = WaveFileFormat.DATA_MAGIC;
+        int dataLength         = waveFileFormat.getFrameLength() * frameSizeInBytes;
         int riffLength = dataLength + headerLength - 8;
 
         AudioFormat audioStreamFormat = null;

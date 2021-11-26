@@ -447,7 +447,6 @@ class MetalTitlePane extends JComponent {
      * Adds the necessary <code>JMenuItem</code>s to the passed in menu.
      */
     private void addMenuItems(JMenu menu) {
-        Locale locale = getRootPane().getLocale();
         JMenuItem mi = menu.add(restoreAction);
         int mnemonic = MetalUtils.getInt("MetalTitlePane.restoreMnemonic", -1);
 

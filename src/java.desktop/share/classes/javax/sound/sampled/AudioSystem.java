@@ -1486,7 +1486,6 @@ public class AudioSystem {
         List<Mixer.Info> infos = new ArrayList<>();
 
         Mixer.Info[] someInfos; // per-mixer
-        Mixer.Info[] allInfos;  // for all mixers
 
         for(int i = 0; i < providers.size(); i++ ) {
             someInfos = providers.get(i).getMixerInfo();

@@ -240,7 +240,6 @@ public abstract class PlatformFont implements FontPeer {
                                                 int start, int len)
     {
         Object[] result = new Object[2];
-        Object[] workingCache;
         byte[] convertedData = null;
         int stringIndex = start;
         int convertedDataIndex = 0;

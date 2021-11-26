@@ -928,7 +928,6 @@ public abstract class SynthStyle {
     public void installDefaults(SynthContext context) {
         if (!context.isSubregion()) {
             JComponent c = context.getComponent();
-            Region region = context.getRegion();
             Font font = c.getFont();
 
             if (font == null || (font instanceof UIResource)) {

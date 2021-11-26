@@ -629,7 +629,6 @@ public class BasicTableHeaderUI extends TableHeaderUI {
         TableColumnModel columnModel = header.getColumnModel();
         for(int column = 0; column < columnModel.getColumnCount();
             column++) {
-            TableColumn aColumn = columnModel.getColumn(column);
             Component comp = getHeaderRenderer(column);
             Dimension pref = comp.getPreferredSize();
             int columnBaseline = comp.getBaseline(pref.width, height);

@@ -759,7 +759,7 @@ public class CSS implements Serializable {
      * Sets the base font size from the passed in string.
      */
     void setBaseFontSize(String size) {
-        int relSize, absSize, diff;
+        int relSize;
 
         if (size != null) {
             if (size.startsWith("+")) {
@@ -957,7 +957,7 @@ public class CSS implements Serializable {
      * @param size CSS string describing font size
      */
     float getPointSize(String size, StyleSheet ss) {
-        int relSize, absSize, diff, index;
+        int relSize, absSize;
         ss = getStyleSheet(ss);
         if (size != null) {
             if (size.startsWith("+")) {
@@ -1357,7 +1357,6 @@ public class CSS implements Serializable {
       */
     static final Color hexToColor(String value) {
         String digits;
-        int n = value.length();
         if (value.startsWith("#")) {
             digits = value.substring(1, Math.min(value.length(), 7));
         } else {
@@ -3258,7 +3257,6 @@ public class CSS implements Serializable {
                                          CSS.Attribute[] names) {
             String[] strings = parseStrings(value);
             int count = strings.length;
-            int index = 0;
             switch (count) {
             case 0:
                 // empty string

@@ -1104,7 +1104,6 @@ public abstract class JComponent extends Container implements Serializable,
                 shouldClearPaintFlags = true;
             }
 
-            int bw,bh;
             boolean printing = getFlag(IS_PRINTING);
             if (!printing && repaintManager.isDoubleBufferingEnabled() &&
                 !getFlag(ANCESTOR_USING_BUFFER) && isDoubleBuffered() &&
@@ -2899,7 +2898,6 @@ public abstract class JComponent extends Container implements Serializable,
 
     /** Overrides <code>processKeyEvent</code> to process events. **/
     protected void processKeyEvent(KeyEvent e) {
-      boolean result;
       boolean shouldProcessKey;
 
       // This gives the key event listeners a crack at the event
@@ -5112,7 +5110,6 @@ public abstract class JComponent extends Container implements Serializable,
     void _paintImmediately(int x, int y, int w, int h) {
         Graphics g;
         Container c;
-        Rectangle b;
 
         int tmpX, tmpY, tmpWidth, tmpHeight;
         int offsetX=0,offsetY=0;

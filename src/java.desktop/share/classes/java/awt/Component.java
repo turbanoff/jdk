@@ -5262,8 +5262,6 @@ public abstract class Component implements ImageObserver, MenuContainer,
      */
     @Deprecated
     public boolean postEvent(Event e) {
-        ComponentPeer peer = this.peer;
-
         if (handleEvent(e)) {
             e.consume();
             return true;

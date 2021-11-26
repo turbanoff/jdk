@@ -1326,7 +1326,6 @@ public class BasicSplitPaneUI extends SplitPaneUI
         setLastDragLocation(-1);
         if(!isContinuousLayout()) {
             Component   leftC = splitPane.getLeftComponent();
-            Rectangle   leftBounds = leftC.getBounds();
 
             if (draggingHW) {
                 if(orientation == JSplitPane.HORIZONTAL_SPLIT) {

@@ -455,10 +455,6 @@ public final class PCMtoPCMCodec extends FormatConversionProvider {
 
         @Override
         public int read(byte[] b, int off, int len) throws IOException {
-
-
-            int i;
-
             // don't read fractional frames
             if ( len%frameSize != 0 ) {
                 len -= (len%frameSize);
@@ -469,7 +465,6 @@ public final class PCMtoPCMCodec extends FormatConversionProvider {
             }
 
             int readCount = super.read(b, off, len);
-            byte tempByte;
 
             if(readCount<0) {   // EOF or error
                 return readCount;

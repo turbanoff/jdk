@@ -1520,7 +1520,6 @@ public class BMPImageReader extends ImageReader implements BMPConstants {
 
         // Read till we have the whole image
         byte[] values = new byte[imSize];
-        int bytesRead = 0;
         iis.readFully(values, 0, imSize);
 
         // Since data is compressed, decompress it

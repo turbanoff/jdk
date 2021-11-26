@@ -778,7 +778,6 @@ class HTMLCodec extends InputStream {
         long iHeadSize = 0;
         long iCRSize = EOLN.length();
         int iEntCount = astEntries.length;
-        boolean bContinue = true;
 
         for( int  iEntry = 0; iEntry < iEntCount; ++iEntry ){
             String stLine = bufferedReader.readLine();

@@ -871,7 +871,6 @@ class XWindowPeer extends XPanelPeer implements WindowPeer,
 
     public void handleFocusEvent(XEvent xev) {
         XFocusChangeEvent xfe = xev.get_xfocus();
-        FocusEvent fe;
         if (focusLog.isLoggable(PlatformLogger.Level.FINE)) {
             focusLog.fine("{0}", xfe);
         }
@@ -982,7 +981,7 @@ class XWindowPeer extends XPanelPeer implements WindowPeer,
         // We must enforce (3), (1), (2) order, upward;
         // note that nautilus on the next restacking will do (1),(3),(2).
         //
-        long laux,     wDesktop = -1, wBottom = -1;
+        long laux,     wBottom = -1;
         int  iMy = -1, iDesktop = -1, iBottom = -1;
         int i = 0;
         XQueryTree xqt = new XQueryTree(XToolkit.getDefaultRootWindow());
@@ -997,7 +996,6 @@ class XWindowPeer extends XPanelPeer implements WindowPeer,
                     }else if( isDesktopWindow( laux ) ) {
                         // we need topmost desktop of them all.
                         iDesktop = i;
-                        wDesktop = laux;
                     }else if(iBottom < 0 &&
                              toplevels.contains( Long.valueOf(laux) ) &&
                              laux != mytopl) {

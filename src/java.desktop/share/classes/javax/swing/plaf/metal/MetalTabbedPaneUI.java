@@ -383,7 +383,6 @@ public class MetalTabbedPaneUI extends BasicTabbedPaneUI {
         int selectedIndex = tabPane.getSelectedIndex();
         int startIndex = tabRuns[ currentRun + 1 ];
         int endIndex = lastTabInRun( tabPane.getTabCount(), currentRun + 1 );
-        int tabOverGap = -1;
         // Check each tab in the row that is 'on top' of this row
         for ( int i = startIndex; i <= endIndex; ++i ) {
             Rectangle tabBounds = getTabBounds( tabPane, i );
