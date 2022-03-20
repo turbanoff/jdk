@@ -1911,7 +1911,7 @@ public abstract class ResourceBundle {
             return null;
         }
 
-        String name = baseName.substring(i+1, baseName.length()) + "Provider";
+        String name = baseName.substring(i+1) + "Provider";
         String providerName = baseName.substring(0, i) + ".spi." + name;
 
         // Use the class loader of the getBundle caller so that the caller's

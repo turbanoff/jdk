@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2021, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2014, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -170,7 +170,7 @@ public final class ImageReader implements AutoCloseable {
                      .getChildren()
                      .stream()
                      .map(Node::getNameString)
-                     .map(s -> s.substring(off, s.length()))
+                     .map(s -> s.substring(off))
                      .toArray(String[]::new);
     }
 
@@ -215,7 +215,7 @@ public final class ImageReader implements AutoCloseable {
         // attributes of the .jimage file. jimage file does not contain
         // attributes for the individual resources (yet). We use attributes
         // of the jimage file itself (creation, modification, access times).
-        // Iniitalized lazily, see {@link #imageFileAttributes()}.
+        // Initialized lazily, see {@link #imageFileAttributes()}.
         BasicFileAttributes imageFileAttributes;
 
         // directory management implementation
@@ -389,7 +389,7 @@ public final class ImageReader implements AutoCloseable {
         Node handlePackages(String name, ImageLocation loc) {
             long size = loc.getUncompressedSize();
             Node n = null;
-            // Only possiblities are /packages, /packages/package/module
+            // Only possibilities are /packages, /packages/package/module
             if (name.equals("/packages")) {
                 visitLocation(loc, (childloc) -> {
                     findNode(childloc.getFullName());

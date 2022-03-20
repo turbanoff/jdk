@@ -190,7 +190,7 @@ public final class MathContext implements Serializable {
             if (!val.startsWith("roundingMode=", fence+1))
                 throw new RuntimeException();
             off = fence + 1 + 13;
-            String str = val.substring(off, val.length());
+            String str = val.substring(off);
             roundingMode = RoundingMode.valueOf(str);
         } catch (RuntimeException re) {
             throw new IllegalArgumentException("bad string format");

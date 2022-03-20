@@ -269,7 +269,7 @@ public class BootLoader {
             String mn = null;
             if (location.startsWith("jrt:/")) {
                 // named module in runtime image ("jrt:/".length() == 5)
-                mn = location.substring(5, location.length());
+                mn = location.substring(5);
             } else if (location.startsWith("file:/")) {
                 // named module in exploded image
                 Path path = Path.of(URI.create(location));

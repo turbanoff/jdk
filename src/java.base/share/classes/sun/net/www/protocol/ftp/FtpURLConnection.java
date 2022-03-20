@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1994, 2021, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1994, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -348,7 +348,7 @@ public class FtpURLConnection extends URLConnection {
     private void decodePath(String path) {
         int i = path.indexOf(";type=");
         if (i >= 0) {
-            String s1 = path.substring(i + 6, path.length());
+            String s1 = path.substring(i + 6);
             if ("i".equalsIgnoreCase(s1)) {
                 type = BIN;
             }
@@ -370,7 +370,7 @@ public class FtpURLConnection extends URLConnection {
         if (!path.endsWith("/")) {
             i = path.lastIndexOf('/');
             if (i > 0) {
-                filename = path.substring(i + 1, path.length());
+                filename = path.substring(i + 1);
                 filename = ParseUtil.decode(filename);
                 pathname = path.substring(0, i);
             } else {
@@ -553,7 +553,7 @@ public class FtpURLConnection extends URLConnection {
      *
      * @throws  IOException if already opened for input or the URL
      *          points to a directory
-     * @throws  FtpProtocolException if errors occur during the transfert.
+     * @throws  FtpProtocolException if errors occur during the transfer.
      */
     @Override
     public OutputStream getOutputStream() throws IOException {

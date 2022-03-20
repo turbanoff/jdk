@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1999, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1999, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -469,7 +469,7 @@ public class ChunkedInputStream extends InputStream implements Hurryable {
                         throw new IOException("Malformed tailer - format should be key:value");
                     }
                     String key = (trailer.substring(0, i)).trim();
-                    String value = (trailer.substring(i+1, trailer.length())).trim();
+                    String value = (trailer.substring(i+1)).trim();
 
                     responses.add(key, value);
 

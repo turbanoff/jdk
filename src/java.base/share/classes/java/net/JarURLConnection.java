@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -30,7 +30,6 @@ import java.util.jar.JarFile;
 import java.util.jar.JarEntry;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
-import java.security.Permission;
 import sun.net.www.ParseUtil;
 
 /**
@@ -185,7 +184,7 @@ public abstract class JarURLConnection extends URLConnection {
 
         /* if ! is the last letter of the innerURL, entryName is null */
         if (++separator != spec.length()) {
-            entryName = spec.substring(separator, spec.length());
+            entryName = spec.substring(separator);
             entryName = ParseUtil.decode (entryName);
         }
     }
