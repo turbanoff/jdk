@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, 2021, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2012, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -34,8 +34,6 @@ import java.util.Locale.*;
 import static java.util.Locale.FilteringMode.*;
 import static java.util.Locale.LanguageRange.*;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Implementation for BCP47 Locale matching
@@ -546,14 +544,15 @@ public final class LocaleMatcher {
         String r = range;
 
         while (!r.isEmpty()) {
-            if (LocaleEquivalentMaps.singleEquivMap.containsKey(r)) {
-                String equiv = LocaleEquivalentMaps.singleEquivMap.get(r);
+            String equiv = LocaleEquivalentMaps.singleEquivMap.get(r);
+            if (equiv != null) {
                 // Return immediately for performance if the first matching
                 // subtag is found.
                 return new String[]{replaceFirstSubStringMatch(range,
                     r, equiv)};
-            } else if (LocaleEquivalentMaps.multiEquivsMap.containsKey(r)) {
-                String[] equivs = LocaleEquivalentMaps.multiEquivsMap.get(r);
+            }
+            String[] equivs = LocaleEquivalentMaps.multiEquivsMap.get(r);
+            if (equivs != null) {
                 String[] result = new String[equivs.length];
                 for (int i = 0; i < equivs.length; i++) {
                     result[i] = replaceFirstSubStringMatch(range,
@@ -622,7 +621,7 @@ public final class LocaleMatcher {
             return new ArrayList<LanguageRange>(priorityList);
         }
 
-        // Create a map, key=originalKey.toLowerCaes(), value=originalKey
+        // Create a map, key=originalKey.toLowerCase(), value=originalKey
         Map<String, String> keyMap = new HashMap<>();
         for (String key : map.keySet()) {
             keyMap.put(key.toLowerCase(Locale.ROOT), key);
