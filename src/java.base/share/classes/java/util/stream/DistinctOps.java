@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2012, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -30,7 +30,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.Spliterator;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Consumer;
 import java.util.function.IntFunction;
 
 /**
@@ -76,21 +76,25 @@ final class DistinctOps {
                     return reduce(helper, spliterator);
                 }
                 else {
-                    // Holder of null state since ConcurrentHashMap does not support null values
-                    AtomicBoolean seenNull = new AtomicBoolean(false);
                     ConcurrentHashMap<T, Boolean> map = new ConcurrentHashMap<>();
-                    TerminalOp<T, Void> forEachOp = ForEachOps.makeRef(t -> {
-                        if (t == null)
-                            seenNull.set(true);
-                        else
-                            map.putIfAbsent(t, Boolean.TRUE);
-                    }, false);
+                    var action = new Consumer<T>() {
+                        // Holder of null state since ConcurrentHashMap does not support null values
+                        volatile boolean seenNull;
+                        @Override
+                        public void accept(T t) {
+                            if (t == null)
+                                seenNull = true;
+                            else
+                                map.putIfAbsent(t, Boolean.TRUE);
+                        }
+                    };
+                    TerminalOp<T, Void> forEachOp = ForEachOps.makeRef(action, false);
                     forEachOp.evaluateParallel(helper, spliterator);
 
                     // If null has been seen then copy the key set into a HashSet that supports null values
                     // and add null
                     Set<T> keys = map.keySet();
-                    if (seenNull.get()) {
+                    if (action.seenNull) {
                         // TODO Implement a more efficient set-union view, rather than copying
                         keys = new HashSet<>(keys);
                         keys.add(null);
