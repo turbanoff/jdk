@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2001, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2001, 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -31,7 +31,7 @@ public class CellTypeStateList {
   public CellTypeStateList(int size) {
     list = new ArrayList<>(size);
     for (int i = 0; i < size; i++) {
-      list.add(i, CellTypeState.makeBottom());
+      list.add(CellTypeState.makeBottom());
     }
   }
 
@@ -48,7 +48,7 @@ public class CellTypeStateList {
   }
 
   //----------------------------------------------------------------------
-  private List<CellTypeState> list;
+  private final List<CellTypeState> list;
   private CellTypeStateList(List<CellTypeState> list) {
     this.list = list;
   }
